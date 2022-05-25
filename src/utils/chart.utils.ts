@@ -1,5 +1,6 @@
 import {
     getOptions,
+    type ChartOptions,
     type SeriesOptionsType,
     type SeriesPieOptions,
     type TitleOptions,
@@ -153,6 +154,9 @@ export const createPieChartOptions = ({
             name: 'Expenses',
             type: 'pie',
             colorByPoint: true,
+            tooltip: {
+                followPointer: true,
+            },
             data: item.map(({ type, amount }) => ({ name: type, y: amount })),
         },
     ];

@@ -1,7 +1,17 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { useRoute } from 'vue-router';
+import PrivateLayout from './components/layouts/PrivateLayout.vue';
+import PublicLayout from './components/layouts/PublicLayout.vue';
+
+const route = useRoute();
 </script>
 
 <template>
-    <RouterView />
+    <div v-if="route.meta.layout === 'private'">
+        <PrivateLayout />
+    </div>
+
+    <div v-if="route.meta.layout === 'public'">
+        <PublicLayout />
+    </div>
 </template>

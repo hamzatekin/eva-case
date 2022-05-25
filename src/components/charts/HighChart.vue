@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import type { Options } from 'highcharts';
+import { toRef } from 'vue';
 
 const props = defineProps<{
-    // to lazy to type this
     chartOptions?: Options;
 }>();
+
+const chartOptions = toRef(props, 'chartOptions');
 </script>
 
 <template>
-    <highcharts class="chart" :options="props.chartOptions"></highcharts>
+    <highcharts class="chart" :options="chartOptions"></highcharts>
 </template>
 
 <style>

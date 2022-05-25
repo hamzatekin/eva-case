@@ -15,14 +15,14 @@ import './assets/index.css';
 import './assets/app-assets/vendors/css/vendors.min.css';
 import './assets/app-assets/vendors/css/ui/prism.min.css';
 import './assets/app-assets/css/bootstrap.min.css';
-import './assets/app-assets/css/bootstrap-extended.css';
+import './assets/app-assets/css/bootstrap-extended.min.css';
 import './assets/app-assets/css/colors.css';
-import './assets/app-assets/css/components.css';
-import './assets/app-assets/css/themes/dark-layout.css';
-import './assets/app-assets/css/themes/semi-dark-layout.css';
+import './assets/app-assets/css/components.min.css';
+import './assets/app-assets/css/themes/dark-layout.min.css';
+// import './assets/app-assets/css/themes/semi-dark-layout.css';
 import './assets/app-assets/css/core/menu/menu-types/vertical-menu.min.css';
-import './assets/app-assets/css/core/colors/palette-gradient.css';
-import './assets/app-assets/css/pages/authentication.css';
+import './assets/app-assets/css/core/colors/palette-gradient.min.css';
+
 
 import HighchartsVue from 'highcharts-vue';
 

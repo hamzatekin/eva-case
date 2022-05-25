@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { defaultOptions, type Options } from 'highcharts';
 import { ref, toRef } from 'vue';
+import HighChart from './HighChart.vue';
 
 const props = defineProps<{
-    // to lazy to type this
-    chartData?: Record<string, any>;
+    chartData?: Options;
 }>();
 
 const chartData = toRef(props, 'chartData');
@@ -13,7 +13,6 @@ const chartOptions = ref<Options>({
     chart: {
         zoomType: 'xy',
     },
-
     title: chartData?.value?.title,
     subtitle: chartData?.value?.subtitle,
     xAxis: chartData?.value?.xAxis,
@@ -35,5 +34,5 @@ const chartOptions = ref<Options>({
 </script>
 
 <template>
-    <highcharts :options="chartOptions" ref="chart"></highcharts>
+    <HighChart :options="chartOptions" />
 </template>

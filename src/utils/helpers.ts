@@ -22,3 +22,14 @@ export const lastItem = (list: any[]) => {
     }
     return list[list.length - 1];
 };
+
+export const createDateObjectForExpense = (date: string) => {
+    const dateList = date.split('-');
+
+    return {
+        date: {
+            month: parseInt(dateList[1], 10),
+            year: parseInt(dateList[0], 10),
+        },
+    };
+};

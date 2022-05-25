@@ -9,12 +9,13 @@ const router = createRouter({
             path: AppRoutes.LOGIN,
             name: AppRouteNames.LOGIN,
             component: LoginView,
+            meta: { layout: 'public', requiresAuth: false },
         },
         {
             path: AppRoutes.HOME,
             name: AppRouteNames.HOME,
             component: () => import('../views/HomeView.vue'),
-            meta: { requiresAuth: true },
+            meta: { layout: 'private', requiresAuth: true },
         },
     ],
 });

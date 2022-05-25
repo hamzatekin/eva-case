@@ -1,3 +1,4 @@
+import { EVA_TOKEN, EVA_USER } from '@/misc/const';
 import type { Module } from 'vuex';
 
 const localStorageModule: Module<LocalStorageStoreType, any> = {
@@ -17,6 +18,12 @@ const localStorageModule: Module<LocalStorageStoreType, any> = {
         setItem({ localStorage }, { key, value }: SetItemParams) {
             localStorage.setItem(key, JSON.stringify(value));
         },
+        removeToken({ localStorage }) {
+            localStorage.removeItem(EVA_TOKEN);
+        },
+        removeUser({ localStorage }) {
+            localStorage.removeItem(EVA_USER);
+        },
     },
     actions: {
         setItem({ commit }, item: SetItemParams) {
@@ -24,6 +31,12 @@ const localStorageModule: Module<LocalStorageStoreType, any> = {
         },
         getItem({ commit }, key: string) {
             commit('getItem', key);
+        },
+        removeToken({ commit }) {
+            commit('removeToken');
+        },
+        removeUser({ commit }) {
+            commit('removeUser');
         },
     },
 };

@@ -58,6 +58,8 @@ const authModule: Module<AuthStoreType, any> = {
 
         async logout({ dispatch, commit }) {
             dispatch('localStorage/removeToken', null, { root: true });
+            dispatch('user/removeUser', null, { root: true });
+            dispatch('user/removeToken', null, { root: true });
             commit('loggedOut');
         },
     },

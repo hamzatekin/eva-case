@@ -4,13 +4,10 @@ import { ref, toRef } from 'vue';
 import HighChart from './HighChart.vue';
 
 const props = defineProps<{
-    // to lazy to type this
-    chartData?: Record<string, any>;
+    chartData?: Options;
 }>();
 
 const chartData = toRef(props, 'chartData');
-
-console.log('chartData', chartData);
 
 const chartOptions = ref<Options>({
     chart: {
@@ -19,17 +16,11 @@ const chartOptions = ref<Options>({
     },
     title: chartData?.value?.title,
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.amount:.1f}%</b>',
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
     },
-    plotOptions: {
-        pie: {
-            // allowPointSelect: true,
-            // cursor: 'pointer',
-            // dataLabels: {
-            //     enabled: true,
-            //     format: '<b>{point.name}</b>: {point.amount:.1f} %',
-            // },
-        },
+    caption: {
+        useHTML: true,
+        text: '<a href="https://www.highcharts.com/">Highchartsasdasdsadasd</a>',
     },
     legend: {
         backgroundColor:
